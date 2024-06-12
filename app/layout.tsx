@@ -6,6 +6,7 @@ import { cookieToInitialState } from "wagmi";
 
 import { config } from "@/config";
 import Web3ModalProvider from "@/context";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Walletconnect DogFooding Example",
@@ -21,9 +22,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Web3ModalProvider initialState={initialState}>
-          {children}
-        </Web3ModalProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Web3ModalProvider initialState={initialState}>
+            {children}
+          </Web3ModalProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

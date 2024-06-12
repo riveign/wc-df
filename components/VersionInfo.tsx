@@ -1,5 +1,6 @@
 import React from "react";
 import packageJson from "../package.json";
+import { ModeToggle } from "./ModeToggle";
 
 export default function VersionInfo() {
   const walletconnectVersion = packageJson.dependencies["@web3modal/wagmi"];
@@ -13,6 +14,7 @@ export default function VersionInfo() {
       <div className="flex items-center">
         <span>Wagmi: {wagmiVersion}</span>
       </div>
+      <ModeToggle />
     </div>
   );
 }
