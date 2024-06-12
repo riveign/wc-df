@@ -12,5 +12,9 @@ export default function ConnectButton() {
   const { data: ensName } = useEnsName({ address });
 
   if (isConnected) return <Account />;
-  return <Button onClick={() => open()}>Connect</Button>;
+  return (
+    <Button size="lg" onClick={() => open()}>
+      Connect
+    </Button>
+  );
 }

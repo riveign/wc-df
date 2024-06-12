@@ -11,7 +11,11 @@ export default function Account() {
     <div>
       <p>Connected to {address}</p>
       <p>ENS Name: {ensName}</p>
-      <Button onClick={() => disconnect()}>Disconnect</Button>
+      <div className="mt-4 flex justify-center">
+        <Button size="lg" onClick={() => disconnect()}>
+          Disconnect
+        </Button>
+      </div>
     </div>
   );
 }
