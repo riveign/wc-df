@@ -11,7 +11,7 @@ import SignButton from "./SignButton";
 export default function Account() {
   const { address } = useAccount();
   const { disconnect } = useDisconnect();
-  const { data: ensName } = useEnsName({ address });
+  const { data: ensName } = useEnsName({ address: address });
   const { walletInfo } = useWalletInfo();
   const { open } = useWeb3Modal();
   const { selectedNetworkId } = useWeb3ModalState();
@@ -20,7 +20,7 @@ export default function Account() {
     <div>
       <p>Connected to {address}</p>
       <p>Wallet: {walletInfo?.name}</p>
-      <p>ENS Name: {ensName || "No name"}</p>
+      <p>ENS Name: {ensName || "No ENS name found"}</p>
       <p>Network: {selectedNetworkId}</p>
       <Button size="lg" onClick={() => open()}>
         Open Modal
