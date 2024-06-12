@@ -12,5 +12,5 @@ export default function ConnectButton() {
   const { data: ensName } = useEnsName({ address });
 
   if (isConnected) return <Account />;
-  return <Button onClick={() => open()}>open modal</Button>;
+  return <Button onClick={() => open()}>Connect</Button>;
 }

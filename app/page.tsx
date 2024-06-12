@@ -1,13 +1,14 @@
 import React from "react";
-import ConnectButton from "../components/ConnectButton";
-import VersionInfo from "@/components/VersionInfo";
+import Header from "@/components/Header";
+import Main from "@/components/Main";
 
 export default function Page() {
   return (
-    <div>
-      <h1>Wallet Connect DogFood</h1>
-      <ConnectButton />
-      <VersionInfo />
+    <div className="flex min-h-screen w-full flex-col">
+      <Header />
+      <div className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
+        <Main />
+      </div>
     </div>
   );
 }
