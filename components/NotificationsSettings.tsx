@@ -43,15 +43,14 @@ export default function NotificationsSettings() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Notifications</CardTitle>
+        <CardTitle>Notifications Settings</CardTitle>
       </CardHeader>
       <CardContent>
         {w3iClientIsLoading ? (
-          <div>Loading W3I Client</div>
+          <div>Loading Client</div>
         ) : (
           <div>
-            <h1>W3I QuickStart</h1>
-            <div>
+            <div className="flex justify-between">
               <Button
                 size="lg"
                 onClick={handleRegistration}

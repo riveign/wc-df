@@ -9,6 +9,7 @@ import {
 import SignButton from "./SignButton";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import NotificationsSettings from "./NotificationsSettings";
+import NotificationsList from "./NotificationList";
 
 export default function Account() {
   const { address } = useAccount();
@@ -69,6 +70,7 @@ export default function Account() {
         </CardContent>
       </Card>
       <NotificationsSettings />
+      <NotificationsList />
     </div>
   );
 }
