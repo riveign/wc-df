@@ -13,15 +13,25 @@ function NotificationsList() {
         <CardHeader>
           <CardTitle>Notifications</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="grid gap-8">
           {!notifications?.length ? (
             <p> No notifications yet.</p>
           ) : (
             notifications.map(({ id, ...message }) => (
               <div key={id}>
-                <h3>{message.title}</h3>
-                <p>{message.body}</p>
-                <p>{message.isRead ? "Read" : "Unread"}</p>
+                <div className="flex items-center gap-4">
+                  <div className="grid gap-1">
+                    <p className="text-sm font-medium leading-none">
+                      {message.title}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {message.body}
+                    </p>
+                  </div>
+                  <div className="ml-auto font-medium">
+                    {message.isRead ? "Read" : "Unread"}
+                  </div>
+                </div>
               </div>
             ))
           )}
