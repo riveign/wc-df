@@ -8,6 +8,7 @@ import { createWeb3Modal } from "@web3modal/wagmi/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import { State, WagmiProvider } from "wagmi";
+import { initWeb3InboxClient } from "@web3inbox/react";
 
 // Setup queryClient
 const queryClient = new QueryClient();
@@ -20,6 +21,12 @@ createWeb3Modal({
   projectId,
   enableAnalytics: true, // Optional - defaults to your Cloud configuration
   enableOnramp: true, // Optional - false as default
+});
+
+initWeb3InboxClient({
+  projectId,
+  allApps: process.env.NODE_ENV === "development" ? true : false,
+  domain: "on-track.cloud",
 });
 
 export default function Web3ModalProvider({

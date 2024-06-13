@@ -7,14 +7,8 @@ import {
   useWeb3ModalState,
 } from "@web3modal/wagmi/react";
 import SignButton from "./SignButton";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import NotificationsSettings from "./NotificationsSettings";
 
 export default function Account() {
   const { address } = useAccount();
@@ -74,6 +68,7 @@ export default function Account() {
           </div>
         </CardContent>
       </Card>
+      <NotificationsSettings />
     </div>
   );
 }
